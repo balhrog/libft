@@ -6,7 +6,7 @@
 /*   By: vquargnu <vquargnu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 14:45:53 by vquargnu          #+#    #+#             */
-/*   Updated: 2014/11/05 14:59:39 by vquargnu         ###   ########.fr       */
+/*   Updated: 2014/11/06 10:56:43 by vquargnu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_memdel(void **ap)
 {
-	free(ap);
+	free(*ap);
 	*ap = NULL;
 }

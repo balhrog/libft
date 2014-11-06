@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vquargnu <vquargnu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2014/11/06 10:04:29 by vquargnu          #+#    #+#             */
+/*   Updated: 2014/11/06 10:24:10 by vquargnu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void	*memset(void *b, int c, size_t n)
+void	*ft_memset(void *b, int c, size_t n)
 {
 	char	*bloc;
 
 	if (n > 0)
 	{
-		d = b;
+		bloc = (char *)b;
 		while (n)
 		{
-			*d++ = c;
+			*bloc++ = (char)c;
 			n--;
 		}
 	}

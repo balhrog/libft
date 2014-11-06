@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vquargnu <vquargnu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/06 10:28:21 by vquargnu          #+#    #+#             */
-/*   Updated: 2014/11/06 10:30:29 by vquargnu         ###   ########.fr       */
+/*   Created: 2014/11/06 15:25:52 by vquargnu          #+#    #+#             */
+/*   Updated: 2014/11/06 15:57:24 by vquargnu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *restrict dst, const char *restrict src, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int index;
-	unsigned int len;
+	char	*dst;
+	size_t	index;
+	size_t	len;
 
-	while(src[len++]);
+	len = strlen(s);
 	index = 0;
-	while(index < len && index < n)
-	{
-		dst[index] = src[len];
-		index++;
-	}
-	while(index < n)
-	{
-		dst[index] = '\0';
-		index++;
-	}
+	dst = (char *)malloc(len);
+	while (s[index])
+		dst[index] = (*f)(index, s[index++]);
+	dst[index] = '\0';
 	return (dst);
 }
+

@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vquargnu <vquargnu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/06 10:28:21 by vquargnu          #+#    #+#             */
-/*   Updated: 2014/11/06 10:30:29 by vquargnu         ###   ########.fr       */
+/*   Created: 2014/11/06 13:03:58 by vquargnu          #+#    #+#             */
+/*   Updated: 2014/11/06 13:26:09 by vquargnu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *restrict dst, const char *restrict src, size_t n)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	unsigned int index;
-	unsigned int len;
+	unsigned int i;
 
-	while(src[len++]);
-	index = 0;
-	while(index < len && index < n)
-	{
-		dst[index] = src[len];
-		index++;
-	}
-	while(index < n)
-	{
-		dst[index] = '\0';
-		index++;
-	}
-	return (dst);
+	i = 0;
+	while (s[i])
+		(*f)(s + i++);
 }
